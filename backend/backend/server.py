@@ -842,6 +842,10 @@ if _name_ == "_main_":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("server:app", host="0.0.0.0", port=port)
 
-    @app.get("/")
+@app.get("/")
 def root():
+    return {"status": "ok"}
+
+@app.get("/api/")
+def api_root():
     return {"status": "ok"}
